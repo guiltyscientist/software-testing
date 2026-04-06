@@ -1,11 +1,13 @@
 package at.jku.softwaretesting;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Answers.CALLS_REAL_METHODS;
+import static org.mockito.Mockito.mockStatic;
 
+import java.time.LocalDate;
 import java.time.MonthDay;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockedStatic;
-import org.mockito.Mockito;
 
 public class BirthdayUtilsTest {
 
@@ -19,11 +21,14 @@ public class BirthdayUtilsTest {
     @Test
     public void testCalcDaysUntilBirthdayMocked() {
         MonthDay birthday = MonthDay.of(3, 31);
-        try(MockedStatic<BirthdayUtils> mockBirthdayUtils = Mockito.mockStatic(BirthdayUtils.class)) {
-            mockBirthdayUtils.when(() -> BirthdayUtils.calcDaysUntilBirthday(birthday))
-                    .thenReturn(12);
-            int daysUntilBirthday = BirthdayUtils.calcDaysUntilBirthday(birthday);
-            assertEquals(12, daysUntilBirthday);
+        LocalDate fakeToday = LocalDate.of(2026, 3, 21);
+
+        try (MockedStatic<LocalDate> mocked = mockStatic(LocalDate.class, CALLS_REAL_METHODS)) {
+            mocked.when(LocalDate::now).thenReturn(fakeToday);
+
+            int result = BirthdayUtils.calcDaysUntilBirthday(birthday);
+
+            assertEquals(10, result);
         }
     }
 }
