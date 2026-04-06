@@ -1,0 +1,12 @@
+UE02 - Mocking:
+
+1) 
+Implementation use LocalDate.now() which lacks the representation of a time-zone,
+therefore cannot represent the real world usage.
+
+The test is mostly always wrong because it calculate the current left over time,
+but assert it always to 12 months, means the cases between 1 and 11 are not considered here.
+
+2)
+
+3)
