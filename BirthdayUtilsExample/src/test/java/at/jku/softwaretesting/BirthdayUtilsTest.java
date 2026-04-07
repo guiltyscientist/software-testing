@@ -31,4 +31,14 @@ public class BirthdayUtilsTest {
             assertEquals(10, result);
         }
     }
+
+    @Test
+    public void testCalcDaysUntilBirthdayRefactored() {
+        MonthDay birthday = MonthDay.of(3, 31);
+        LocalDate testDay = LocalDate.of(2026, 3, 10);
+
+        int result = BirthdayUtilsRefactored.calcDaysUntilBirthday(birthday, testDay);
+
+        assertEquals(21, result);
+    }
 }
