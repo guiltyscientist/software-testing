@@ -1,12 +1,22 @@
 UE02 - Mocking:
 
-1) 
-Implementation use LocalDate.now() which lacks the representation of a time-zone,
-therefore cannot represent the real world usage.
+1)
+The disadvantage of the implementation is that calcDaysUntilBirthday() internally
+calls LocalDate.now(), making it dependent on the actual current date.
 
-The test is mostly always wrong because it calculate the current left over time,
-but assert it always to 12 months, means the cases between 1 and 11 are not considered here.
+The test testCalcDaysUntilBirthday() is therefore not deterministic:
+assertEquals(12, daysUntilBirthday) is only correct on a single day of the year
+(March 19, 2026). On any other day the test fails, even though the code itself
+is correct.
 
 2)
+In testCalcDaysUntilBirthdayMocked() the static method LocalDate.now() is replaced
+with a fixed date (March 21, 2026) using Mockito. This makes the test independent
+of the real current date and always reproducible. CALLS_REAL_METHODS is necessary
+so that all other LocalDate methods (e.g. LocalDate.of()) continue to work normally.
 
 3)
+BirthdayUtilsRefactored receives the date as a parameter instead of retrieving it
+internally via LocalDate.now(). This allows any date to be passed directly in the
+test, mocking is no longer required. This significantly improves testability, as
+the external dependency is completely eliminated.
