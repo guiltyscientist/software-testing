@@ -210,4 +210,24 @@ public class RingBufferTest {
 			assertEquals(expected++, val);
 		}
 	}
+
+	@Test
+	public void testIteratorAfterWrapAround() {
+		RingBuffer<Integer> buffer = new RingBuffer<>(5);
+		for (int i = 0; i < 5; i++) {
+			buffer.enqueue(i);
+		}
+		buffer.dequeue();
+		buffer.dequeue();
+
+		buffer.enqueue(5);
+		buffer.enqueue(6);
+
+		int[] expected = { 2, 3, 4, 5, 6 };
+		int idx = 0;
+		for (int val : buffer) {
+			assertEquals(expected[idx++], val);
+		}
+	}
+
 }
