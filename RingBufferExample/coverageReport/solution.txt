@@ -1,0 +1,1 @@
+At first the coverage wasn't 100%. After checking the report, we looked for the reason and found that the iterator’s remove() method wasn't covered by any test. Therefore, we added the test testIteratorRemoveThrowsUnsupportedOperationException to cover it. After adding this test, the missing line was executed and the coverage reached 100%.

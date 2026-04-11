@@ -1,0 +1,3 @@
+initially, the mutation score was 93%, and checking the PIT records shows that 2 of the mutations survived during testing, both of which were located in this line of code:
+first = (first + 1) % a.length;
+This statement is executed when the buffer is full and an additional enqueue overwrites the first element (index 0) and updates the first pointer. the test testOverEnqueueProcess covered this line, but it only checked the iterator output. however, the iterator implementation doesn't depend on first, so the mutated behavior wasn't detected. therefore, we added a new test testOverEnqueueThenDequeuePreservesLogicalOrder to verify the logical queue order using peek() or dequeue() after overwriting elements.
