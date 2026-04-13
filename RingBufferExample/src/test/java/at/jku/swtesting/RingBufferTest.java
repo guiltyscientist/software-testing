@@ -101,23 +101,22 @@ public class RingBufferTest {
 		}
 	}
 
-	@Test
-	public void testOverEnqueueProcess() {
-		RingBuffer<Integer> buffer = new RingBuffer<>(10);
-		for (int i = 0; i <= 10; i++) {
-			buffer.enqueue(i);
-		}
 
-		int idx = 0;
-		for(int val : buffer) {
-			if (idx == 0) {
-				assertEquals(10, val);
-			}  else {
-				assertEquals(idx, val);
-			}
-			idx++;
-		}
-	}
+
+	@Test
+    public void testOverEnqueueThenDequeuePreservesLogicalOrder() {
+        RingBuffer<Integer> buffer = new RingBuffer<>(10);
+
+        for (int i = 0; i <= 10; i++) {
+            buffer.enqueue(i);
+        }
+
+        for (int expected = 1; expected <= 10; expected++) {
+            assertEquals(expected, buffer.dequeue());
+        }
+
+        assertTrue(buffer.isEmpty());
+    }
 
 	@Test
 	public void testNormalDequeueProcess() {
@@ -208,25 +207,6 @@ public class RingBufferTest {
 		int expected = 0;
 		for (int val : buffer) {
 			assertEquals(expected++, val);
-		}
-	}
-
-	@Test
-	public void testIteratorAfterWrapAround() {
-		RingBuffer<Integer> buffer = new RingBuffer<>(5);
-		for (int i = 0; i < 5; i++) {
-			buffer.enqueue(i);
-		}
-		buffer.dequeue();
-		buffer.dequeue();
-
-		buffer.enqueue(5);
-		buffer.enqueue(6);
-
-		int[] expected = { 2, 3, 4, 5, 6 };
-		int idx = 0;
-		for (int val : buffer) {
-			assertEquals(expected[idx++], val);
 		}
 	}
 

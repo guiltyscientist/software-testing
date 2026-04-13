@@ -2,3 +2,7 @@
 /BirthdayUtilsExample/.idea/
 /BirthdayUtilsExample/target/
 /RingBufferExample/.idea/
+RingBufferExample/target/
+RingBufferExample/.bloop/
+RingBufferExample/.metals/
+RingBufferExample/.vscode/
