@@ -1,0 +1,188 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Seite-1" id="7K35lGlz7jvasDrxY7RG">
+    <mxGraphModel dx="774" dy="2285" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Liha-pIGgepMTP3ChC7E-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="empty&lt;div&gt;N = 0&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="filled&lt;div&gt;0 &amp;lt; N &amp;lt; cap&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="200" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="full&lt;div&gt;N = cap&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="510" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-5" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-2" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="290" y="600" as="sourcePoint" />
+            <mxPoint x="340" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-6" connectable="0" parent="Liha-pIGgepMTP3ChC7E-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="enqueue" vertex="1">
+          <mxGeometry relative="1" x="0.0322" y="-1" as="geometry">
+            <mxPoint x="-9" y="-7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-7" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-3" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="290" y="600" as="sourcePoint" />
+            <mxPoint x="340" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-8" connectable="0" parent="Liha-pIGgepMTP3ChC7E-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="enqueue&lt;div&gt;[N = cap-1]&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.2421" y="-2" as="geometry">
+            <mxPoint x="-24" y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-9" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-4" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="550" />
+              <mxPoint x="590" y="550" />
+            </Array>
+            <mxPoint x="560" y="600" as="sourcePoint" />
+            <mxPoint x="610" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-10" connectable="0" parent="Liha-pIGgepMTP3ChC7E-9" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="enqueue&lt;div&gt;[N = cap (Overwrite)]&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0066" y="-4" as="geometry">
+            <mxPoint x="5" y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-11" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-4" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340" y="600" as="sourcePoint" />
+            <mxPoint x="390" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-12" connectable="0" parent="Liha-pIGgepMTP3ChC7E-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="dequeue" vertex="1">
+          <mxGeometry relative="1" x="-0.0211" y="-2" as="geometry">
+            <mxPoint x="-3" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-13" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-3" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="340" y="600" as="sourcePoint" />
+            <mxPoint x="390" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-14" connectable="0" parent="Liha-pIGgepMTP3ChC7E-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="dequeue&lt;div&gt;[N = 1]&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.2007" y="-2" as="geometry">
+            <mxPoint y="23" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-15" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-2" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=0.2;entryY=0.017;entryDx=0;entryDy=0;entryPerimeter=0;" target="Liha-pIGgepMTP3ChC7E-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="20" />
+              <mxPoint x="400" />
+            </Array>
+            <mxPoint x="370" y="290" as="sourcePoint" />
+            <mxPoint x="420" y="240" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-16" connectable="0" parent="Liha-pIGgepMTP3ChC7E-15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="peek&lt;div&gt;[RuntimeException]&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0416" as="geometry">
+            <mxPoint x="-14" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-17" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-3" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="140" y="510" />
+              <mxPoint x="130" y="430" />
+            </Array>
+            <mxPoint x="370" y="530" as="sourcePoint" />
+            <mxPoint x="240" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-18" connectable="0" parent="Liha-pIGgepMTP3ChC7E-17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="peek" vertex="1">
+          <mxGeometry relative="1" x="0.0654" y="4" as="geometry">
+            <mxPoint y="6" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-19" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-4" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="520" />
+              <mxPoint x="710" y="450" />
+            </Array>
+            <mxPoint x="370" y="530" as="sourcePoint" />
+            <mxPoint x="420" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-20" connectable="0" parent="Liha-pIGgepMTP3ChC7E-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="peek" vertex="1">
+          <mxGeometry relative="1" x="0.0473" y="-2" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-21" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-2" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="40" />
+              <mxPoint x="450" y="10" />
+            </Array>
+            <mxPoint x="390" y="530" as="sourcePoint" />
+            <mxPoint x="440" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-22" connectable="0" parent="Liha-pIGgepMTP3ChC7E-21" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="dequeue&lt;div&gt;[RuntimeException]&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.0058" y="-2" as="geometry">
+            <mxPoint y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-23" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-2" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-4" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="480" as="sourcePoint" />
+            <mxPoint x="440" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-24" connectable="0" parent="Liha-pIGgepMTP3ChC7E-23" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="enqueue&lt;div&gt;[cap = 1]&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.09" y="-3" as="geometry">
+            <mxPoint x="-8" y="18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-25" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-4" style="endArrow=classic;html=1;rounded=0;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="390" y="480" as="sourcePoint" />
+            <mxPoint x="440" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-26" connectable="0" parent="Liha-pIGgepMTP3ChC7E-25" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="dequeue&lt;div&gt;[N = 1]&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.1828" y="-3" as="geometry">
+            <mxPoint x="22" y="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-27" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-3" style="curved=1;endArrow=classic;html=1;rounded=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="570" />
+              <mxPoint x="320" y="560" />
+            </Array>
+            <mxPoint x="390" y="480" as="sourcePoint" />
+            <mxPoint x="440" y="430" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-28" connectable="0" parent="Liha-pIGgepMTP3ChC7E-27" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="enqueue / dequeue&lt;div&gt;[1 &amp;lt; N &amp;lt; cap-1]&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.0148" y="3" as="geometry">
+            <mxPoint y="18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-29" parent="1" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="399" y="-160" as="geometry" />
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-30" edge="1" parent="1" source="Liha-pIGgepMTP3ChC7E-29" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="Liha-pIGgepMTP3ChC7E-2" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="414" y="-20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Liha-pIGgepMTP3ChC7E-31" connectable="0" parent="Liha-pIGgepMTP3ChC7E-30" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="new RingBuffer(cap)" vertex="1">
+          <mxGeometry relative="1" x="-0.27" as="geometry">
+            <mxPoint y="-33" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

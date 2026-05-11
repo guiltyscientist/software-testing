@@ -11,6 +11,9 @@ import org.mockito.MockedStatic;
 
 public class BirthdayUtilsTest {
 
+    /*
+    Original Test
+     */
     @Test
     public void testCalcDaysUntilBirthday() {
         MonthDay birthday = MonthDay.of(3, 31);
@@ -23,13 +26,10 @@ public class BirthdayUtilsTest {
         MonthDay birthday = MonthDay.of(3, 31);
         LocalDate fakeToday = LocalDate.of(2026, 3, 21);
 
-        try (MockedStatic<LocalDate> mocked = mockStatic(LocalDate.class, CALLS_REAL_METHODS)) {
-            mocked.when(LocalDate::now).thenReturn(fakeToday);
-
-            int result = BirthdayUtils.calcDaysUntilBirthday(birthday);
-
-            assertEquals(10, result);
-        }
+        MockedStatic<LocalDate> mocked = mockStatic(LocalDate.class, CALLS_REAL_METHODS);
+        mocked.when(LocalDate::now).thenReturn(fakeToday);
+        int result = BirthdayUtils.calcDaysUntilBirthday(birthday);
+        assertEquals(10, result);
     }
 
     @Test

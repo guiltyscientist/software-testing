@@ -1,0 +1,87 @@
+TC1 - Empty to Filled via enqueue
+----------------------------------
+Initial state  : Empty (capacity = 3)
+Sequence       : Empty -[enqueue("a")]-> Filled
+Expected result: size() = 1, peek() = "a", isEmpty() = false, isFull() = false
+Final state    : Filled
+
+TC2 - Empty to Full via enqueue (capacity = 1)
+-----------------------------------------------
+Initial state  : Empty (capacity = 1)
+Sequence       : Empty -[enqueue("a")]-> Full
+Expected result: size() = 1, peek() = "a", isFull() = true, isEmpty() = false
+Final state    : Full
+
+TC3 - Empty to Filled to Empty via enqueue then dequeue
+--------------------------------------------------------
+Initial state  : Empty (capacity = 3)
+Sequence       : Empty -[enqueue("a")]-> Filled -[dequeue()]-> Empty
+Expected result: dequeue() returns "a", size() = 0, isEmpty() = true
+Final state    : Empty
+
+TC4 - Filled stays Filled via enqueue
+--------------------------------------
+Initial state  : Empty (capacity = 3)
+Sequence       : Empty -[enqueue("a")]-> Filled -[enqueue("b")]-> Filled
+Expected result: size() = 2, peek() = "a", isFull() = false, isEmpty() = false
+Final state    : Filled
+
+TC5 - Filled to Full via enqueue
+----------------------------------
+Initial state  : Empty (capacity = 3)
+Sequence       : Empty -[enqueue("a")]-> Filled
+                       -[enqueue("b")]-> Filled
+                       -[enqueue("c")]-> Full
+Expected result: size() = 3, peek() = "a", isFull() = true
+Final state    : Full
+
+TC6 - Full to Filled via dequeue
+----------------------------------
+Initial state  : Full (capacity = 3, elements: "a", "b", "c")
+Sequence       : Full -[dequeue()]-> Filled
+Expected result: dequeue() returns "a", size() = 2, isFull() = false, isEmpty() = false
+Final state    : Filled
+
+TC7 - Full stays Full via enqueue (overwrite)
+----------------------------------------------
+Initial state  : Full (capacity = 3, elements: "a", "b", "c")
+Sequence       : Full -[enqueue("x")]-> Full
+Expected result: size() = 3, isFull() = true, peek() = "b" (first element "a" overwritten)
+Final state    : Full
+
+TC8 - Full to Empty via dequeue (capacity = 1)
+-----------------------------------------------
+Initial state  : Full (capacity = 1, element: "a")
+Sequence       : Full -[dequeue()]-> Empty
+Expected result: dequeue() returns "a", size() = 0, isEmpty() = true
+Final state    : Empty
+
+TC9 - peek() on Filled (no state change)
+-----------------------------------------
+Initial state  : Filled (capacity = 3, elements: "a", "b")
+Sequence       : Filled -[peek()]-> Filled
+Expected result: peek() returns "a", size() = 2 (unchanged), isFull() = false
+Final state    : Filled
+
+TC10 - peek() on Full (no state change)
+----------------------------------------
+Initial state  : Full (capacity = 3, elements: "a", "b", "c")
+Sequence       : Full -[peek()]-> Full
+Expected result: peek() returns "a", size() = 3 (unchanged), isFull() = true
+Final state    : Full
+
+TC11 - dequeue() on Empty (error back-loop)
+--------------------------------------------
+Initial state  : Empty (capacity = 3)
+Sequence       : Empty -[dequeue()]-> Empty  [back-loop, invalid transition]
+Expected result: RuntimeException thrown with message "Empty ring buffer."
+                 State remains Empty, size() = 0
+Final state    : Empty
+
+TC12 - peek() on Empty (error back-loop)
+-----------------------------------------
+Initial state  : Empty (capacity = 3)
+Sequence       : Empty -[peek()]-> Empty  [back-loop, invalid transition]
+Expected result: RuntimeException thrown with message "Empty ring buffer."
+                 State remains Empty, size() = 0
+Final state    : Empty

@@ -6,3 +6,7 @@ RingBufferExample/target/
 RingBufferExample/.bloop/
 RingBufferExample/.metals/
 RingBufferExample/.vscode/
+/RingBufferExample02/target/test-classes/at/jku/swtesting/*.class
+/RingBufferExample02/target/classes/at/jku/swtesting/*.class
+/RingBufferExample02/.idea
+/RingBufferExample02/pom.xml
